@@ -1,0 +1,58 @@
+header{
+    border: lightgray solid 1px;
+    max-width: 500px;
+    margin: auto;
+    padding: 0 20px 0 20px;
+}
+
+header h1{
+    padding: 0 20px;
+    width: 500px;
+    color: #202020;
+    font-family: 'Lato', sans-serif;
+    font-weight: normal;
+}
+
+header input{
+    margin: 0 10px 30px 20px;
+    padding: 7px;
+    width: 89%;
+}
+
+.artist{
+    min-height: 83px;
+}
+
+.artist img{
+    margin: 5px 10px 5px 10px;
+    float: left;
+}
+
+.artist h5{
+    margin-top: 0 !important;
+    font-weight: normal;
+}
+
+.artist .text{
+    margin-top: 15px;
+    margin-bottom: 5px;
+    color: #454545;
+    font-family: 'Roboto', sans-serif;
+}
+
+ul :hover{
+    background: whitesmoke;
+}
+
+ul{
+    margin: auto;
+    list-style-type: none;
+    width: 400px;
+    padding: 0;
+}
+
+li{
+    border: lightgray solid 1px;
+    margin-top: -1px;
+    margin-bottom: -1px;
+}
