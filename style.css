@@ -16,7 +16,14 @@ header h1{
 header input{
     margin: 0 10px 30px 20px;
     padding: 7px;
-    width: 89%;
+    width: 65%;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#addArtist{
+    width: 20%;
+    margin: 0;
 }
 
 .artist{
@@ -40,7 +47,7 @@ header input{
     font-family: 'Roboto', sans-serif;
 }
 
-ul :hover{
+#artists :hover{
     background: whitesmoke;
 }
 
@@ -55,4 +62,33 @@ li{
     border: lightgray solid 1px;
     margin-top: -1px;
     margin-bottom: -1px;
+}
+
+#artistForm input{
+    padding: 5px;
+    width: 100%;
+    text-align: center;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#artistForm{
+    text-align: center;
+    display: none;
+}
+
+#formSubmit{
+    width: 40% !important;
+}
+
+.deleteArtist:hover{
+    background-color: darkred !important;
+}
+
+.deleteArtist{
+    float: right;
+    margin-top: -8%;
+    background-color: red;
+    color: white;
+    border: none;
 }

@@ -4,6 +4,7 @@
     <link href="https://fonts.googleapis.com/css?family=Lato|Roboto&display=swap" rel="stylesheet">
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css"/>
+    <script src="script.js"></script>
     <title>Lab2 4711</title>
 </head>
 <body>
@@ -11,23 +12,20 @@
 <header>
     <h1>Artist Directory</h1>
     <form class="search">
-        <input type="text">
+        <input type="text"/>
+        <input id="addArtist" type="button" value="Add Artist" onclick="toggleForm()"/>
     </form>
 </header>
 
-<ul class="artists">
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/men/1.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Johnathan James</h3> <h5 class="text">Harvard University</h5></div></li>
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/men/21.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Petier Griffin</h3> <h5 class="text">School of Rahul</h5></div></li>
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/women/5.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Priscilla Corrigan</h3> <h5 class="text">BCIT</h5></div></li>
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/men/8.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Emmett Richard</h3> <h5 class="text">School of Google</h5></div></li>
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/women/17.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Kaycee Buckner</h3> <h5 class="text">Unknown University</h5></div></li>
-    <li class="artist"><img src="https://randomuser.me/api/portraits/med/men/4.jpg" alt="Profile Picture"/>
-        <div><h3 class="text">Rubi Gregory</h3> <h5 class="text">Didn't Graduate</h5></div></li>
+<ul id="artistForm">
+    <input type="text" name="name" maxlength="40" placeholder="Artist Name">
+    <input type="text" name="about" maxlength="40" placeholder="About Artist">
+    <input type="text" name="image" placeholder="Image URL">
+    <input id="formSubmit" type="button" value="Add" onclick="addArtist()">
+</ul>
+
+<ul id="artists">
+
 </ul>
 
 </body>
