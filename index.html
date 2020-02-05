@@ -5,14 +5,14 @@
     <meta charset="UTF-8">
     <link rel="stylesheet" type="text/css" href="style.css"/>
     <script src="script.js"></script>
-    <title>Lab2 4711</title>
+    <title>Lab4 4711</title>
 </head>
-<body>
+<body onload="loadArtists()">
 
 <header>
     <h1>Artist Directory</h1>
-    <form class="search">
-        <input type="text"/>
+    <form>
+        <input id="search" type="text" oninput="searchArtist()"/>
         <input id="addArtist" type="button" value="Add Artist" onclick="toggleForm()"/>
     </form>
 </header>
