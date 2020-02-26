@@ -17,12 +17,12 @@
     </form>
 </header>
 
-<ul id="artistForm">
+<form id="artistForm" action="/add-artist" method="POST">
     <input type="text" name="name" maxlength="40" placeholder="Artist Name">
     <input type="text" name="about" maxlength="40" placeholder="About Artist">
     <input type="text" name="image" placeholder="Image URL">
-    <input id="formSubmit" type="button" value="Add" onclick="addArtist()">
-</ul>
+    <input id="formSubmit" type="submit" value="Add">
+</form>
 
 <ul id="artists">
 
