@@ -32,6 +32,8 @@ header input{
 
 .artist img{
     margin: 5px 10px 5px 10px;
+    height: 70px;
+    width: 70px;
     float: left;
 }
 
@@ -81,11 +83,11 @@ li{
     width: 40% !important;
 }
 
-.deleteArtist:hover{
+#deleteArtist:hover{
     background-color: darkred !important;
 }
 
-.deleteArtist{
+#deleteArtist{
     float: right;
     margin-top: -8%;
     background-color: red;

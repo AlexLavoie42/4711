@@ -18,14 +18,22 @@
 </header>
 
 <form id="artistForm" action="/add-artist" method="POST">
-    <input type="text" name="name" maxlength="40" placeholder="Artist Name">
-    <input type="text" name="about" maxlength="40" placeholder="About Artist">
-    <input type="text" name="image" placeholder="Image URL">
+    <input type="text" name="name" maxlength="40" placeholder="Artist Name" required>
+    <input type="text" name="about" maxlength="40" placeholder="About Artist" required>
+    <input type="text" name="image" placeholder="Image URL" required>
     <input id="formSubmit" type="submit" value="Add">
 </form>
 
 <ul id="artists">
-
+    {{#each artists}}
+        <li class="artist">
+            <img src="{{this.image}}" alt="Profile Picture"/>
+            <div>
+                <h3 class="text">{{this.name}}</h3> <h5 class="text">{{this.about}}</h5>
+                <button id="deleteArtist" onclick="deleteArtist({{this.id}})">Delete</button>
+            </div>
+        </li>
+    {{/each}}
 </ul>
 
 </body>
