@@ -31,12 +31,15 @@ function readFile(callback){
 }
 
 function deleteArtist(id){
-    console.log("?")
     readFile((json) => {
-        json.splice(id, 1);
-        fs.writeFile(PATH, JSON.stringify(json), function (err) {
-            if (err) throw err;
-        });
+        for(let i = 0; i < json.length; i++) {
+            if(json[i]['id'] == id) {
+                json.splice(i, 1);
+                fs.writeFile(PATH, JSON.stringify(json), function (err) {
+                    if (err) throw err;
+                });
+            }
+        }
     });
 }
 

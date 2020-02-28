@@ -34,10 +34,8 @@ app.post('/add-artist', (req, res) => {
     });
 });
 
-app.get('/delete-artist/:id', (req, res) => {
-    console.log(req.params['id']);
-    quickJSON.deleteArtist(req.params['id']);
-
+app.post('/delete-artist', (req, res) => {
+    quickJSON.deleteArtist(req.body.id);
     res.redirect(301, '/');
 });
 
