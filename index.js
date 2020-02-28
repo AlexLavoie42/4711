@@ -39,4 +39,4 @@ app.post('/delete-artist', (req, res) => {
     res.redirect(301, '/');
 });
 
-app.listen(3000);
+app.listen(process.env.PORT || 3000);
