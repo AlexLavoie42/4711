@@ -1,3 +1,4 @@
+let xhttp = new XMLHttpRequest();
 
 function toggleForm() {
     const FORM = document.getElementById("artistForm");
@@ -30,6 +31,9 @@ function searchArtist(){
 
 function deleteArtist(id){
     if(window.confirm("Are you sure you want do delete this artist?")){
-        window.location = "/delete-artist/" + id;
+        xhttp.open("POST", "/delete-artist");
+        xhttp.setRequestHeader("Content-type", "application/x-www-form-urlencoded");
+        xhttp.send("id="+id);
+        setTimeout(()=>{location.reload();}, 10);
     }
 }
