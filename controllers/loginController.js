@@ -15,7 +15,7 @@ exports.login = (req, res) => {
 
 exports.logout = (req, res) => {
     loggedIn = false;
-    res.redirect(301, '/login')
+    res.redirect(301, '/')
 };
 
 exports.isLoggedIn = () => {
