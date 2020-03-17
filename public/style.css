@@ -1,3 +1,7 @@
+body{
+    margin: 0;
+}
+
 header{
     border: lightgray solid 1px;
     max-width: 500px;
@@ -94,4 +98,37 @@ li{
     color: white;
     border-radius: 5px;
     border: none;
+}
+
+#loginForm{
+    margin-top: 100px;
+}
+
+#loginForm input{
+    text-align: center;
+    display: block;
+    margin: auto;
+    padding: 10px 0 10px 0;
+    width: 30%;
+    border-radius: 5px;
+    border-width: 1px;
+}
+
+#loginForm #login{
+    margin-top: 50px;
+}
+
+#logout{
+    padding: 15px;
+    margin: 0;
+    text-align: right;
+    background: orange;
+}
+
+#logout input{
+    padding: 10px 20px 10px 20px;
+    background: lightgrey;
+    border: none;
+    margin-right: 80px;
+    text-align: center;
 }

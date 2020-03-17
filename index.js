@@ -1,8 +1,10 @@
 let express = require('express');
 let path = require('path');
+let bodyParser = require('body-parser');
 let hbs = require('express-handlebars');
-let quickJSON = require('./jsonUtils');
 let app = express();
+let db = require('./util/database');
+let loginController = require('./controllers/loginController');
 
 app.use(express.json());
 app.use(express.urlencoded());
@@ -14,31 +16,20 @@ app.engine( 'hbs', hbs( {
 }));
 
 app.use(express.static(__dirname + '/public'));
+app.use(bodyParser.urlencoded({ extended: false }));
+
+let artistRoutes = require('./routes/artists');
+let loginRoutes = require('./routes/login');
 
 app.get('/', (req, res) => {
-    quickJSON.readFile((json) => {
-        res.render('home', {artists: json, layout: false})
-    });
+    if(loginController.isLoggedIn()){
+        res.render('artistView', {layout: false});
+    } else {
+        res.render('loginView', {layout: false});
+    }
 });
 
-app.post('/add-artist', (req, res) => {
-    let name = req.body.name;
-    let about = req.body.about;
-    let image = req.body.image;
-
-    quickJSON.readFile((json) => {
-        let id = (json != undefined) ? json.length : 0;
-        quickJSON.addFile({id: id, name: name, about: about, image: image});
-
-        res.redirect(301, '/');
-    });
-});
-
-app.get('/delete-artist/:id', (req, res) => {
-    console.log(req.params['id']);
-    quickJSON.deleteArtist(req.params['id']);
-
-    res.redirect(301, '/');
-});
+app.use(artistRoutes);
+app.use(loginRoutes);
 
 app.listen(3000);
